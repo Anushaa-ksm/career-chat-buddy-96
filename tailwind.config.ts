@@ -58,10 +58,20 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      backgroundImage: {
+        'gradient-sky': 'var(--gradient-sky)',
+        'gradient-chat': 'var(--gradient-chat)',
+        'gradient-button': 'var(--gradient-button)',
+        'gradient-heart': 'var(--gradient-heart)',
+        'gradient-sparkle': 'var(--gradient-sparkle)',
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        'pixel': ['"Courier New"', 'monospace'],
       },
       keyframes: {
         "accordion-down": {
