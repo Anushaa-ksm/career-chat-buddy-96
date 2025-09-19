@@ -1,4 +1,3 @@
-import { PixelBackground } from '@/components/PixelBackground';
 import { CareerQuizBot } from '@/components/CareerQuizBot';
 import { useEffect } from 'react';
 
@@ -38,21 +37,19 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="relative min-h-screen">
-      <PixelBackground />
-      
-      <header className="absolute top-0 left-0 right-0 z-10 p-4">
+    <main className="min-h-screen bg-background">
+      <header className="p-4 border-b border-border">
         <div className="text-center">
-          <h1 className="text-2xl lg:text-4xl font-pixel font-bold text-foreground drop-shadow-lg">
-            🎮 CAREER QUEST 🎮
+          <h1 className="text-2xl lg:text-4xl font-bold text-foreground">
+            🎯 CAREER QUEST
           </h1>
-          <p className="text-sm lg:text-base font-pixel text-muted-foreground mt-2">
-            AI-Powered Career Guidance Adventure
+          <p className="text-sm lg:text-base text-muted-foreground mt-2">
+            AI-Powered Career Guidance
           </p>
         </div>
       </header>
 
-      <div className="relative z-10 pt-24">
+      <div className="pt-4">
         <CareerQuizBot />
       </div>
     </main>

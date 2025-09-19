@@ -1,129 +1,149 @@
 import { QuizQuestion } from '@/types/quiz';
 
 export const QUIZ_QUESTIONS: QuizQuestion[] = [
+  // Yes/No Questions (1-4)
   {
     id: 1,
-    text: "Do you enjoy solving math puzzles and logical problems?",
+    text: "Do you enjoy solving math and logic puzzles?",
     options: [
       {
-        text: "Yes, I love them!",
-        scores: { engineering: 25, medicine: 10, arts: 5, commerce: 15 }
+        text: "Yes",
+        scores: { engineering: 30, medicine: 15, arts: 5, commerce: 15 }
       },
       {
-        text: "Sometimes, if they're interesting",
-        scores: { engineering: 15, medicine: 15, arts: 10, commerce: 20 }
-      },
-      {
-        text: "Not really my thing",
-        scores: { engineering: 5, medicine: 10, arts: 25, commerce: 15 }
+        text: "No",
+        scores: { engineering: 5, medicine: 10, arts: 30, commerce: 20 }
       }
     ]
   },
   {
     id: 2,
-    text: "When you see someone hurt, what's your first instinct?",
+    text: "Are you interested in helping people with health issues?",
     options: [
       {
-        text: "Help them immediately and assess their condition",
-        scores: { engineering: 10, medicine: 30, arts: 15, commerce: 10 }
+        text: "Yes",
+        scores: { engineering: 10, medicine: 35, arts: 15, commerce: 10 }
       },
       {
-        text: "Call for professional help",
-        scores: { engineering: 15, medicine: 20, arts: 10, commerce: 20 }
-      },
-      {
-        text: "Comfort them emotionally",
-        scores: { engineering: 5, medicine: 15, arts: 25, commerce: 15 }
+        text: "No",
+        scores: { engineering: 25, medicine: 5, arts: 25, commerce: 25 }
       }
     ]
   },
   {
     id: 3,
-    text: "What type of content do you enjoy creating most?",
+    text: "Do you love creating art, music, or stories?",
     options: [
       {
-        text: "Digital art, music, or stories",
-        scores: { engineering: 10, medicine: 5, arts: 30, commerce: 10 }
+        text: "Yes",
+        scores: { engineering: 10, medicine: 5, arts: 35, commerce: 15 }
       },
       {
-        text: "Business plans or marketing content",
-        scores: { engineering: 10, medicine: 5, arts: 15, commerce: 30 }
-      },
-      {
-        text: "Technical tutorials or how-to guides",
-        scores: { engineering: 25, medicine: 15, arts: 10, commerce: 10 }
+        text: "No",
+        scores: { engineering: 25, medicine: 25, arts: 5, commerce: 25 }
       }
     ]
   },
   {
     id: 4,
-    text: "In a team project, what role do you naturally take?",
+    text: "Are you interested in starting your own business?",
     options: [
       {
-        text: "The leader who organizes and delegates",
-        scores: { engineering: 15, medicine: 20, arts: 10, commerce: 30 }
+        text: "Yes",
+        scores: { engineering: 15, medicine: 10, arts: 20, commerce: 35 }
       },
       {
-        text: "The problem-solver who finds technical solutions",
-        scores: { engineering: 30, medicine: 15, arts: 10, commerce: 10 }
-      },
-      {
-        text: "The creative who comes up with innovative ideas",
-        scores: { engineering: 10, medicine: 10, arts: 30, commerce: 15 }
+        text: "No",
+        scores: { engineering: 25, medicine: 25, arts: 25, commerce: 5 }
       }
     ]
   },
+  // Multiple Choice Questions (5-8)
   {
     id: 5,
-    text: "What motivates you most in your work/studies?",
+    text: "What's your preferred learning style?",
     options: [
       {
-        text: "Making a positive impact on people's lives",
-        scores: { engineering: 10, medicine: 30, arts: 20, commerce: 15 }
+        text: "Hands-on experiments and building things",
+        scores: { engineering: 30, medicine: 20, arts: 10, commerce: 15 }
       },
       {
-        text: "Building something innovative and useful",
-        scores: { engineering: 30, medicine: 10, arts: 15, commerce: 20 }
+        text: "Reading research papers and case studies",
+        scores: { engineering: 15, medicine: 30, arts: 10, commerce: 20 }
       },
       {
-        text: "Expressing creativity and inspiring others",
-        scores: { engineering: 5, medicine: 10, arts: 30, commerce: 15 }
+        text: "Visual and creative exploration",
+        scores: { engineering: 10, medicine: 10, arts: 30, commerce: 15 }
+      },
+      {
+        text: "Networking and real-world applications",
+        scores: { engineering: 15, medicine: 15, arts: 15, commerce: 30 }
       }
     ]
   },
   {
     id: 6,
-    text: "How do you prefer to spend your free time?",
+    text: "Which subject combination appeals to you most?",
     options: [
       {
-        text: "Reading, gaming, or working on tech projects",
-        scores: { engineering: 25, medicine: 15, arts: 15, commerce: 10 }
+        text: "Physics, Math, and Computer Science",
+        scores: { engineering: 35, medicine: 10, arts: 5, commerce: 15 }
       },
       {
-        text: "Volunteering or helping others in your community",
-        scores: { engineering: 10, medicine: 25, arts: 20, commerce: 15 }
+        text: "Biology, Chemistry, and Physics",
+        scores: { engineering: 15, medicine: 35, arts: 5, commerce: 10 }
       },
       {
-        text: "Creating art, music, or starting side businesses",
-        scores: { engineering: 10, medicine: 5, arts: 25, commerce: 25 }
+        text: "Literature, History, and Psychology",
+        scores: { engineering: 5, medicine: 15, arts: 35, commerce: 20 }
+      },
+      {
+        text: "Economics, Accounting, and Marketing",
+        scores: { engineering: 10, medicine: 5, arts: 15, commerce: 35 }
       }
     ]
   },
   {
     id: 7,
-    text: "What's your dream work environment?",
+    text: "What motivates you most?",
     options: [
       {
-        text: "A modern office with the latest technology",
-        scores: { engineering: 25, medicine: 10, arts: 10, commerce: 20 }
+        text: "Solving complex technical problems",
+        scores: { engineering: 35, medicine: 15, arts: 10, commerce: 15 }
       },
       {
-        text: "A hospital or clinic where I can help patients",
-        scores: { engineering: 5, medicine: 30, arts: 10, commerce: 5 }
+        text: "Making a difference in people's health and lives",
+        scores: { engineering: 10, medicine: 35, arts: 20, commerce: 10 }
       },
       {
-        text: "A creative studio or flexible workspace",
-        scores: { engineering: 10, medicine: 5, arts: 25, commerce: 25 }
+        text: "Expressing creativity and inspiring others",
+        scores: { engineering: 10, medicine: 10, arts: 35, commerce: 20 }
+      },
+      {
+        text: "Building successful ventures and leading teams",
+        scores: { engineering: 15, medicine: 10, arts: 15, commerce: 35 }
+      }
+    ]
+  },
+  {
+    id: 8,
+    text: "What's your ideal work environment?",
+    options: [
+      {
+        text: "Tech labs with cutting-edge equipment",
+        scores: { engineering: 35, medicine: 15, arts: 10, commerce: 15 }
+      },
+      {
+        text: "Hospitals and research facilities",
+        scores: { engineering: 10, medicine: 35, arts: 10, commerce: 10 }
+      },
+      {
+        text: "Creative studios and artistic spaces",
+        scores: { engineering: 10, medicine: 10, arts: 35, commerce: 20 }
+      },
+      {
+        text: "Corporate offices and meeting rooms",
+        scores: { engineering: 15, medicine: 10, arts: 15, commerce: 35 }
       }
     ]
   }
