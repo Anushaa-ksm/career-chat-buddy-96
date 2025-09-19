@@ -133,12 +133,12 @@
   /* Pixel Art Animation Effects */
   @keyframes pixelPulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    50% { transform: scale(1.05); }
   }
 
   @keyframes sparkle {
-    0%, 100% { opacity: 0.6; transform: rotate(0deg) scale(1); }
-    50% { opacity: 1; transform: rotate(180deg) scale(1.2); }
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
   }
 
   @keyframes floatUp {
@@ -148,19 +148,19 @@
 
   @keyframes heartBeat {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+    50% { transform: scale(1.1); }
   }
 
   .pixel-pulse {
-    animation: pixelPulse 2s infinite;
+    animation: pixelPulse 3s infinite ease-in-out;
   }
 
   .sparkle-animation {
-    animation: sparkle 3s infinite;
+    animation: sparkle 4s infinite ease-in-out;
   }
 
   .heart-beat {
-    animation: heartBeat 1s infinite;
+    animation: heartBeat 2s infinite ease-in-out;
   }
 
   .float-up {

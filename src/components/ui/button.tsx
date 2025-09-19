@@ -15,9 +15,9 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:scale-105 active:scale-95 shadow-lg border-2 border-secondary",
         ghost: "hover:bg-accent/50 hover:text-accent-foreground hover:scale-105 active:scale-95",
         link: "text-primary underline-offset-4 hover:underline hover:scale-105",
-        pixel: "bg-gradient-button text-primary-foreground hover:scale-110 active:scale-90 shadow-xl border-4 border-primary pixel-pulse",
-        heart: "bg-gradient-heart text-destructive-foreground hover:scale-110 active:scale-90 shadow-xl border-4 border-destructive heart-beat",
-        sparkle: "bg-gradient-sparkle text-accent-foreground hover:scale-110 active:scale-90 shadow-xl border-4 border-accent sparkle-animation",
+        pixel: "bg-gradient-button text-primary-foreground hover:scale-105 active:scale-95 shadow-xl border-4 border-primary",
+        heart: "bg-gradient-heart text-destructive-foreground hover:scale-105 active:scale-95 shadow-xl border-4 border-destructive",
+        sparkle: "bg-gradient-sparkle text-accent-foreground hover:scale-105 active:scale-95 shadow-xl border-4 border-accent",
       },
       size: {
         default: "h-10 px-4 py-2",
