@@ -4,6 +4,7 @@ import { ChatMessage } from '@/components/ChatMessage';
 import { HealthBar } from '@/components/HealthBar';
 import { CareerChart } from '@/components/CareerChart';
 import { CareerRoadmap } from '@/components/CareerRoadmap';
+import { CareerPathRoadmap } from '@/components/CareerPathRoadmap';
 import { QUIZ_QUESTIONS, CAREER_PATHS } from '@/data/questions';
 import { QuizState, CareerScores } from '@/types/quiz';
 
@@ -316,10 +317,13 @@ export const CareerQuizBot = () => {
           )}
 
           {quizState.isComplete && showResults && getRoadmapData() && (
-             <div className="animate-in fade-in duration-500">
+             <div className="animate-in fade-in duration-500 space-y-4">
                 <CareerRoadmap 
                     primaryPath={getRoadmapData()!.primaryPath}
                     secondaryPath={getRoadmapData()!.secondaryPath}
+                />
+                <CareerPathRoadmap 
+                    stream={getRoadmapData()!.primaryPath.stream}
                 />
              </div>
           )}
