@@ -40,6 +40,7 @@ const CareerRoadmapPage = () => {
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
   const engineeringPaths: Record<string, PathNode> = {
+    // Level 1: Foundation
     bachelor: {
       id: 'bachelor',
       title: 'B.Tech/B.E.',
@@ -47,22 +48,25 @@ const CareerRoadmapPage = () => {
       type: 'education',
       duration: '4 years',
       difficulty: 'Medium',
-      nextPaths: ['job-entry', 'masters', 'certifications'],
+      nextPaths: ['choice-point'],
       icon: <GraduationCap className="w-6 h-6" />,
-      position: { x: 50, y: 10 }
+      position: { x: 50, y: 5 }
     },
-    'job-entry': {
-      id: 'job-entry',
-      title: 'Software Engineer',
-      description: 'Entry-level development position',
-      type: 'job',
-      duration: '2-3 years',
-      salary: '₹4-8 LPA',
-      difficulty: 'Easy',
-      nextPaths: ['senior-dev', 'specializations-job'],
-      icon: <Code className="w-6 h-6" />,
-      position: { x: 20, y: 40 }
+    
+    // Level 2: Decision Point
+    'choice-point': {
+      id: 'choice-point',
+      title: 'Career Decision',
+      description: 'Choose your path: Higher Education or Start Career',
+      type: 'specialization',
+      duration: '',
+      difficulty: 'Medium',
+      nextPaths: ['masters', 'job-entry'],
+      icon: <Target className="w-6 h-6" />,
+      position: { x: 50, y: 20 }
     },
+
+    // Level 3A: Higher Education Path
     masters: {
       id: 'masters',
       title: 'M.Tech/MS',
@@ -70,75 +74,213 @@ const CareerRoadmapPage = () => {
       type: 'education',
       duration: '2 years',
       difficulty: 'Hard',
-      nextPaths: ['senior-dev', 'research', 'phd'],
+      nextPaths: ['research-jobs', 'senior-roles'],
       icon: <Award className="w-6 h-6" />,
-      position: { x: 50, y: 40 }
+      position: { x: 25, y: 35 }
     },
-    certifications: {
-      id: 'certifications',
-      title: 'Cloud Certifications',
-      description: 'AWS, Azure, Google Cloud',
-      type: 'certification',
-      duration: '3-6 months',
-      difficulty: 'Medium',
-      nextPaths: ['cloud-engineer', 'devops'],
-      icon: <Globe className="w-6 h-6" />,
-      position: { x: 80, y: 40 }
-    },
-    'senior-dev': {
-      id: 'senior-dev',
-      title: 'Senior Developer',
-      description: 'Lead development projects',
+
+    // Level 3B: Direct Job Path
+    'job-entry': {
+      id: 'job-entry',
+      title: 'Junior Engineer',
+      description: 'Entry-level development position',
       type: 'job',
-      salary: '₹8-18 LPA',
-      difficulty: 'Medium',
-      nextPaths: ['tech-lead', 'architect', 'product-manager'],
-      icon: <TrendingUp className="w-6 h-6" />,
-      position: { x: 35, y: 70 }
+      duration: '2-3 years',
+      salary: '₹4-8 LPA',
+      difficulty: 'Easy',
+      nextPaths: ['skill-development'],
+      icon: <Code className="w-6 h-6" />,
+      position: { x: 75, y: 35 }
     },
-    'specializations-job': {
-      id: 'specializations-job',
-      title: 'AI/ML Specialization',
-      description: 'Machine Learning & Data Science',
-      type: 'specialization',
-      duration: '6-12 months',
+
+    // Level 4A: Research/Academic Jobs
+    'research-jobs': {
+      id: 'research-jobs',
+      title: 'Research Scientist',
+      description: 'R&D roles in tech companies',
+      type: 'job',
+      salary: '₹12-25 LPA',
       difficulty: 'Hard',
-      nextPaths: ['data-scientist', 'ml-engineer'],
-      icon: <Cpu className="w-6 h-6" />,
-      position: { x: 10, y: 70 }
+      nextPaths: ['senior-research'],
+      icon: <BookOpen className="w-6 h-6" />,
+      position: { x: 15, y: 50 }
     },
-    'cloud-engineer': {
-      id: 'cloud-engineer',
-      title: 'Cloud Engineer',
-      description: 'Cloud infrastructure specialist',
+
+    // Level 4B: Senior Roles after Masters
+    'senior-roles': {
+      id: 'senior-roles',
+      title: 'Senior Engineer',
+      description: 'Advanced technical positions',
       type: 'job',
       salary: '₹10-20 LPA',
       difficulty: 'Medium',
-      nextPaths: ['cloud-architect', 'devops-lead'],
-      icon: <Database className="w-6 h-6" />,
-      position: { x: 80, y: 70 }
+      nextPaths: ['leadership-track'],
+      icon: <TrendingUp className="w-6 h-6" />,
+      position: { x: 35, y: 50 }
     },
-    'tech-lead': {
-      id: 'tech-lead',
+
+    // Level 4C: Skill Development
+    'skill-development': {
+      id: 'skill-development',
+      title: 'Skill Specialization',
+      description: 'Choose specialization: AI/ML, Cloud, Full Stack',
+      type: 'specialization',
+      duration: '1-2 years',
+      difficulty: 'Medium',
+      nextPaths: ['ai-specialist', 'cloud-specialist', 'fullstack-lead'],
+      icon: <Zap className="w-6 h-6" />,
+      position: { x: 75, y: 50 }
+    },
+
+    // Level 5A: AI/ML Track
+    'ai-specialist': {
+      id: 'ai-specialist',
+      title: 'AI/ML Engineer',
+      description: 'Machine Learning & Data Science',
+      type: 'job',
+      salary: '₹12-25 LPA',
+      difficulty: 'Hard',
+      nextPaths: ['ai-architect'],
+      icon: <Cpu className="w-6 h-6" />,
+      position: { x: 65, y: 65 }
+    },
+
+    // Level 5B: Cloud Track
+    'cloud-specialist': {
+      id: 'cloud-specialist',
+      title: 'Cloud Engineer',
+      description: 'AWS, Azure, Google Cloud specialist',
+      type: 'job',
+      salary: '₹10-22 LPA',
+      difficulty: 'Medium',
+      nextPaths: ['cloud-architect'],
+      icon: <Database className="w-6 h-6" />,
+      position: { x: 75, y: 65 }
+    },
+
+    // Level 5C: Full Stack Track
+    'fullstack-lead': {
+      id: 'fullstack-lead',
+      title: 'Full Stack Lead',
+      description: 'End-to-end application development',
+      type: 'job',
+      salary: '₹8-18 LPA',
+      difficulty: 'Medium',
+      nextPaths: ['tech-lead'],
+      icon: <Globe className="w-6 h-6" />,
+      position: { x: 85, y: 65 }
+    },
+
+    // Level 6A: Leadership Track
+    'leadership-track': {
+      id: 'leadership-track',
       title: 'Tech Lead',
       description: 'Technical team leadership',
       type: 'job',
-      salary: '₹15-30 LPA',
+      salary: '₹15-35 LPA',
       difficulty: 'Hard',
-      nextPaths: ['architect', 'engineering-manager', 'cto'],
+      nextPaths: ['engineering-manager', 'principal-engineer'],
       icon: <Users className="w-6 h-6" />,
-      position: { x: 35, y: 100 }
+      position: { x: 35, y: 80 }
     },
-    architect: {
-      id: 'architect',
-      title: 'Solution Architect',
-      description: 'Design system architecture',
+
+    // Level 6B: Senior Research
+    'senior-research': {
+      id: 'senior-research',
+      title: 'Principal Scientist',
+      description: 'Lead research initiatives',
       type: 'job',
       salary: '₹20-45 LPA',
       difficulty: 'Hard',
-      nextPaths: ['chief-architect', 'consultant'],
+      nextPaths: ['research-director'],
+      icon: <Award className="w-6 h-6" />,
+      position: { x: 15, y: 80 }
+    },
+
+    // Level 6C: Architecture Roles
+    'ai-architect': {
+      id: 'ai-architect',
+      title: 'AI Solutions Architect',
+      description: 'Design AI/ML systems at scale',
+      type: 'job',
+      salary: '₹25-50 LPA',
+      difficulty: 'Hard',
+      nextPaths: ['cto-track'],
       icon: <Building2 className="w-6 h-6" />,
-      position: { x: 50, y: 130 }
+      position: { x: 65, y: 80 }
+    },
+
+    'cloud-architect': {
+      id: 'cloud-architect',
+      title: 'Cloud Solutions Architect',
+      description: 'Design cloud infrastructure at enterprise scale',
+      type: 'job',
+      salary: '₹22-45 LPA',
+      difficulty: 'Hard',
+      nextPaths: ['cto-track'],
+      icon: <Building2 className="w-6 h-6" />,
+      position: { x: 75, y: 80 }
+    },
+
+    'tech-lead': {
+      id: 'tech-lead',
+      title: 'Engineering Manager',
+      description: 'Manage engineering teams',
+      type: 'job',
+      salary: '₹18-40 LPA',
+      difficulty: 'Hard',
+      nextPaths: ['cto-track'],
+      icon: <Users className="w-6 h-6" />,
+      position: { x: 85, y: 80 }
+    },
+
+    // Level 7: Executive Track
+    'cto-track': {
+      id: 'cto-track',
+      title: 'CTO/VP Engineering',
+      description: 'Technology leadership and strategy',
+      type: 'job',
+      salary: '₹50+ LPA',
+      difficulty: 'Hard',
+      nextPaths: [],
+      icon: <Star className="w-6 h-6" />,
+      position: { x: 70, y: 95 }
+    },
+
+    'engineering-manager': {
+      id: 'engineering-manager',
+      title: 'Director of Engineering',
+      description: 'Lead multiple engineering teams',
+      type: 'job',
+      salary: '₹30-60 LPA',
+      difficulty: 'Hard',
+      nextPaths: ['cto-track'],
+      icon: <Briefcase className="w-6 h-6" />,
+      position: { x: 35, y: 95 }
+    },
+
+    'principal-engineer': {
+      id: 'principal-engineer',
+      title: 'Principal Engineer',
+      description: 'Technical expert and mentor',
+      type: 'job',
+      salary: '₹25-55 LPA',
+      difficulty: 'Hard',
+      nextPaths: ['cto-track'],
+      icon: <Award className="w-6 h-6" />,
+      position: { x: 50, y: 95 }
+    },
+
+    'research-director': {
+      id: 'research-director',
+      title: 'Research Director',
+      description: 'Head of R&D division',
+      type: 'job',
+      salary: '₹35-70 LPA',
+      difficulty: 'Hard',
+      nextPaths: [],
+      icon: <Target className="w-6 h-6" />,
+      position: { x: 15, y: 95 }
     }
   };
 
@@ -333,7 +475,13 @@ const CareerRoadmapPage = () => {
             </div>
 
             {/* Interactive Roadmap */}
-            <div className="relative bg-white rounded-xl border shadow-lg p-8 min-h-[800px] overflow-hidden">
+            <div className="relative bg-white rounded-xl border shadow-lg p-8 min-h-[1000px] overflow-hidden">
+              {/* Flow Direction Guide */}
+              <div className="absolute top-4 left-4 flex items-center gap-2 text-sm text-muted-foreground">
+                <ArrowRight className="w-4 h-4" />
+                <span>Career Flow: Education → Specialization → Leadership</span>
+              </div>
+              
               {renderConnections()}
               {Object.values(engineeringPaths).map(renderNode)}
               
