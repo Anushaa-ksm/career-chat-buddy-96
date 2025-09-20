@@ -1,7 +1,11 @@
 import { CareerQuizBot } from '@/components/CareerQuizBot';
+import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const Index = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     document.title = 'Career Quest - AI-Powered Career Guidance for Students';
     
@@ -36,11 +40,21 @@ const Index = () => {
 
   return (
     <main className="min-h-screen bg-gradient-sky overflow-hidden relative">
+      {/* Navigation Button */}
+      <div className="absolute top-4 right-4 z-20">
+        <Button 
+          variant="outline" 
+          onClick={() => navigate('/roadmap')}
+          className="bg-white/90 backdrop-blur font-pixel"
+        >
+          🗺️ ROADMAP
+        </Button>
+      </div>
+
       {/* Decorative Clouds */}
       <div className="absolute top-[10%] left-[15%] w-32 h-16 bg-white/80 rounded-full filter blur-sm pixelated-image animate-pulse" style={{ animationDuration: '8s' }}></div>
       <div className="absolute top-[15%] right-[20%] w-48 h-24 bg-white/70 rounded-full filter blur-sm pixelated-image animate-pulse" style={{ animationDuration: '10s' }}></div>
       <div className="absolute top-[25%] left-[30%] w-24 h-12 bg-white/60 rounded-full filter blur-sm pixelated-image animate-pulse" style={{ animationDuration: '9s' }}></div>
-
 
       <header className="p-4 text-center relative z-10">
         <h1 className="text-2xl lg:text-4xl font-pixel font-bold text-foreground" style={{ textShadow: '3px 3px 0px hsl(var(--border))' }}>
