@@ -1,113 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Clean Modern Design System - Career Guidance Bot */
+/* Retro Game Design System - Career Quest */
 
 @layer base {
   :root {
-    /* Clean Light Theme */
-    --background: 0 0% 100%;
-    --foreground: 224 71% 4%;
+    /* Light Theme Palette from ref.jpg */
+    --background: 280 60% 90%; /* Light pastel purple */
+    --foreground: 260 40% 15%; /* Dark purple for text */
 
-    /* Card System */
-    --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
+    --card: 260 50% 98%;
+    --card-foreground: 260 40% 15%;
 
-    /* Chat Bubble Colors */
     --popover: 0 0% 100%;
     --popover-foreground: 224 71% 4%;
 
-    /* Primary Colors */
-    --primary: 221 83% 53%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 140 60% 50%; /* Vibrant green for buttons */
+    --primary-foreground: 30 100% 98%;
 
-    /* Secondary Elements */
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 84% 5%;
+    --secondary: 240 40% 92%;
+    --secondary-foreground: 260 40% 15%;
 
-    /* Muted Elements */
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 240 40% 92%;
+    --muted-foreground: 260 25% 45%;
 
-    /* Accent Colors */
-    --accent: 210 40% 96%;
-    --accent-foreground: 222 84% 5%;
+    --accent: 40 90% 60%; /* Sunny yellow/orange */
+    --accent-foreground: 260 40% 15%;
 
-    /* Error States */
-    --destructive: 0 85% 60%;
+    --destructive: 0 85% 60%; /* Heart red */
     --destructive-foreground: 210 40% 98%;
 
-    /* Borders & Inputs */
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 221 83% 53%;
+    --border: 260 40% 25%;
+    --input: 240 40% 94%;
+    --ring: 140 70% 60%;
 
-    /* Clean Gradients */
-    --gradient-chat: linear-gradient(135deg, hsl(210 40% 96%) 0%, hsl(210 35% 93%) 100%);
-    --gradient-button: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(221 73% 48%) 100%);
+    /* Gradients from ref.jpg */
+    --gradient-sky: linear-gradient(180deg, hsl(275, 80%, 85%) 0%, hsl(240, 80%, 88%) 100%);
+    --gradient-chat: linear-gradient(135deg, hsl(0 0% 100% / 0.9) 0%, hsl(240 60% 95% / 0.9) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(140, 60%, 55%) 0%, hsl(140, 65%, 45%) 100%);
+    --gradient-heart: linear-gradient(135deg, hsl(0, 90%, 65%) 0%, hsl(0, 80%, 55%) 100%);
+    --gradient-sparkle: linear-gradient(135deg, hsl(50, 100%, 70%) 0%, hsl(40, 90%, 60%) 100%);
 
-    /* Modern Radius */
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    /* Dark Theme */
-    --background: 224 71% 4%;
-    --foreground: 210 40% 98%;
+    /* Dark Theme - Inverted and adjusted for a retro night feel */
+    --background: 260 30% 10%;
+    --foreground: 260 25% 90%;
 
-    --card: 224 71% 4%;
-    --card-foreground: 210 40% 98%;
+    --card: 260 30% 15%;
+    --card-foreground: 260 25% 90%;
 
-    --popover: 224 71% 4%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 260 30% 10%;
+    --popover-foreground: 260 25% 90%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 84% 5%;
+    --primary: 140 60% 50%;
+    --primary-foreground: 30 100% 98%;
 
-    --secondary: 222 84% 5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 260 30% 25%;
+    --secondary-foreground: 260 25% 90%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 260 30% 25%;
+    --muted-foreground: 260 20% 65%;
 
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 40 90% 60%;
+    --accent-foreground: 260 40% 15%;
 
     --destructive: 0 85% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 217 91% 60%;
+    --border: 260 25% 50%;
+    --input: 260 30% 20%;
+    --ring: 140 70% 60%;
 
-    /* Dark Mode Gradients */
-    --gradient-chat: linear-gradient(135deg, hsl(217 33% 17%) 0%, hsl(217 28% 15%) 100%);
-    --gradient-button: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 81% 55%) 100%);
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --gradient-sky: linear-gradient(180deg, hsl(260, 40%, 15%) 0%, hsl(240, 50%, 20%) 100%);
+    --gradient-chat: linear-gradient(135deg, hsl(260 25% 20% / 0.9) 0%, hsl(260 30% 15% / 0.9) 100%);
   }
 }
 
@@ -118,7 +89,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Press Start 2P', monospace;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -130,8 +101,8 @@
   }
 
   @keyframes sparkle {
-    0%, 100% { opacity: 0.7; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.1); }
+    0%, 100% { opacity: 0.7; transform: scale(1) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.1) rotate(15deg); }
   }
 
   @keyframes floatUp {
@@ -167,14 +138,20 @@
 
   ::-webkit-scrollbar-track {
     background: hsl(var(--muted));
+    border-left: 2px solid hsl(var(--border));
   }
 
   ::-webkit-scrollbar-thumb {
     background: hsl(var(--primary));
-    border-radius: 0px;
+    border: 2px solid hsl(var(--border));
   }
 
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--accent));
+  }
+
+  .pixelated-image {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-;
   }
 }

@@ -71,7 +71,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        'pixel': ['"Courier New"', 'monospace'],
+        'pixel': ['"Press Start 2P"', 'monospace'],
       },
       keyframes: {
         "accordion-down": {

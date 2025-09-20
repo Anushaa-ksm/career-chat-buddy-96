@@ -9,6 +9,7 @@ export interface QuizQuestion {
       arts: number;
       commerce: number;
     };
+    item?: string; // Added item property
   }[];
   nextQuestion?: {
     [key: string]: number | null; // Option index -> next question ID

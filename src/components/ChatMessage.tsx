@@ -15,17 +15,11 @@ export const ChatMessage = ({ isBot = true, children, className }: ChatMessagePr
       className
     )}>
       <div className={cn(
-        'max-w-[80%] px-4 py-3 font-pixel text-sm shadow-lg border-2 relative',
+        'max-w-[80%] px-4 py-3 font-pixel text-xs leading-relaxed shadow-lg border-2 relative',
         isBot 
-          ? 'bg-gradient-chat text-card-foreground border-border ml-4' 
-          : 'bg-primary text-primary-foreground border-primary mr-4'
+          ? 'bg-gradient-chat text-card-foreground border-border' 
+          : 'bg-primary/90 text-primary-foreground border-border'
       )}>
-        {isBot && (
-          <div className="absolute -left-2 top-4 w-0 h-0 border-t-[8px] border-b-[8px] border-r-[8px] border-t-transparent border-b-transparent border-r-card" />
-        )}
-        {!isBot && (
-          <div className="absolute -right-2 top-4 w-0 h-0 border-t-[8px] border-b-[8px] border-l-[8px] border-t-transparent border-b-transparent border-l-primary" />
-        )}
         {children}
       </div>
     </div>
